@@ -18,7 +18,7 @@
 #### There are 2 datasets to download:
 
 
-1. Download dataset here: https://rose1.ntu.edu.sg/dataset/actionRecognition
+1. Download dataset here: https://drive.google.com/file/d/1H-U_cDg_S-LQRWtwJ_imDXfYDT__4OeY/view?usp=sharing
 2. unzip the datasets zip `data.zip` to `/data/`
 
 #### Directory Structure
