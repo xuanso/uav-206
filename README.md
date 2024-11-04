@@ -1,10 +1,7 @@
-<h1 align="center"> DeGCN: Deformable Graph Convolutional Networks for Skeleton-Based Action Recognition </h1>
-<p align="center">
-<a href="https://ieeexplore.ieee.org/document/10478824"><img src="https://img.shields.io/badge/IEEE-Paper-blue"></a>
-<a href="https://paperswithcode.com/sota/skeleton-based-action-recognition-on-ntu-rgbd-1?p=degcn-deformable-graph-convolutional-networks"><img src="https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/degcn-deformable-graph-convolutional-networks/skeleton-based-action-recognition-on-ntu-rgbd-1"></a>
-</p>
+<h1 align="center"> UAV-206 </h1>
 
-Official PyTorch implementation of "DeGCN : Deformable Graph Convolutional Networks for Skeleton-Based Action Recognition"
+
+全球校园人工智能算法精英大赛-基于无人机的人体行为识别
 
 # Prerequisites
 
@@ -20,16 +17,9 @@ Official PyTorch implementation of "DeGCN : Deformable Graph Convolutional Netwo
 
 #### There are 2 datasets to download:
 
-- NTU RGB+D 60 Skeleton
-- NTU RGB+D 120 Skeleton
 
-1. Request dataset here: https://rose1.ntu.edu.sg/dataset/actionRecognition
-2. Download the skeleton-only datasets:
-   1. `nturgbd_skeletons_s001_to_s017.zip` (NTU RGB+D 60)
-   2. `nturgbd_skeletons_s018_to_s032.zip` (NTU RGB+D 120)
-   3. Extract above files to `./data/nturgbd_raw`
-
-### Data Processing
+1. Download dataset here: https://rose1.ntu.edu.sg/dataset/actionRecognition
+2. unzip the datasets zip `data.zip` to `/data/`
 
 #### Directory Structure
 
@@ -37,29 +27,14 @@ Put downloaded data into the following directory structure:
 
 ```
 - data/
-  - ntu/
-  - ntu120/
-  - nturgbd_raw/
-    - nturgb+d_skeletons/     # from `nturgbd_skeletons_s001_to_s017.zip`
-      ...
-    - nturgb+d_skeletons120/  # from `nturgbd_skeletons_s018_to_s032.zip`
-      ...
+  - train_joint.npy
+  - train_label.npy
+  - val_joint.npy
+  - val_label.npy
+  - test_joint.npy
+  - test_label.npy
+  - gen_empty_test_label.py  #be used to generate `test_label.npy`
 ```
-
-#### Generating Data
-
-- Generate NTU RGB+D 60 or NTU RGB+D 120 dataset:
-
-```
- cd ./data/ntu # or cd ./data/ntu120
- # Get skeleton of each performer
- python get_raw_skes_data.py
- # Remove the bad skeleton 
- python get_raw_denoised_data.py
- # Transform the skeleton to the center of the first frame
- python seq_transformation.py
-```
-
 
 # Training & Testing
 
