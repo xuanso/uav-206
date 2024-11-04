@@ -83,7 +83,6 @@ class Feeder(Dataset):
         valid_frame_num = np.sum(data_numpy.sum(0).sum(-1).sum(-1) != 0)
         #CTVM
         data_numpy = tools.valid_crop_resize(data_numpy, valid_frame_num, self.p_interval, self.window_size)
-        print(data_numpy)
         if self.random_rot:
             data_numpy = tools.random_rot(data_numpy)
         if self.bone:
