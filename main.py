@@ -227,8 +227,7 @@ class Processor():
     def __init__(self, arg):
         self.arg = arg
         self.save_arg()
-        self.ctime = ''.join(re.split('-|:|\[|\]', get_current_timestamp())).split(',')[0]
-        self.savepath = self.arg.work_dir + '/' + self.ctime
+        self.savepath = self.arg.work_dir
         if not os.path.exists(self.savepath):
             os.makedirs(self.savepath)
         if arg.phase == 'train':
