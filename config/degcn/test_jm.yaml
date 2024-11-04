@@ -15,7 +15,7 @@ train_feeder_args:
   random_rot: True
   p_interval: [0.5, 1]
   vel: True
-  bone: True
+  bone: False
 
 test_feeder_args:
   data_path: ./data/test_joint.npy
@@ -24,7 +24,7 @@ test_feeder_args:
   window_size: 64
   p_interval: [0.95]
   vel: True
-  bone: True
+  bone: False
   debug: False
 
 # model
