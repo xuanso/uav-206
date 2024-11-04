@@ -18,8 +18,8 @@ train_feeder_args:
   bone: False
 
 test_feeder_args:
-  data_path: ./data/uav/test_B_joint.npy
-  label_path: ./data/uav/test_B_label.npy
+  data_path: ./data/test_joint.npy
+  label_path: ./data/test_label.npy
   split: test
   window_size: 64
   p_interval: [0.95]

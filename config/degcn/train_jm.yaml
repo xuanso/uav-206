@@ -14,7 +14,7 @@ train_feeder_args:
   normalization: False
   random_rot: True
   p_interval: [0.5, 1]
-  vel: False
+  vel: True
   bone: False
 
 test_feeder_args:
@@ -23,7 +23,7 @@ test_feeder_args:
   split: test
   window_size: 64
   p_interval: [0.95]
-  vel: False
+  vel: True
   bone: False
   debug: False
 

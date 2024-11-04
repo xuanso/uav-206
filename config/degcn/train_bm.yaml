@@ -14,8 +14,8 @@ train_feeder_args:
   normalization: False
   random_rot: True
   p_interval: [0.5, 1]
-  vel: False
-  bone: False
+  vel: True
+  bone: True
 
 test_feeder_args:
   data_path: ./data/val_joint.npy
@@ -23,8 +23,8 @@ test_feeder_args:
   split: test
   window_size: 64
   p_interval: [0.95]
-  vel: False
-  bone: False
+  vel: True
+  bone: True
   debug: False
 
 # model

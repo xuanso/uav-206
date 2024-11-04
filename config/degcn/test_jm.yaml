@@ -14,17 +14,17 @@ train_feeder_args:
   normalization: False
   random_rot: True
   p_interval: [0.5, 1]
-  vel: False
-  bone: False
+  vel: True
+  bone: True
 
 test_feeder_args:
-  data_path: ./data/uav/test_B_motion.npy
-  label_path: ./data/uav/test_B_label.npy
+  data_path: ./data/test_joint.npy
+  label_path: ./data/test_label.npy
   split: test
   window_size: 64
   p_interval: [0.95]
-  vel: False
-  bone: False
+  vel: True
+  bone: True
   debug: False
 
 # model
