@@ -11,6 +11,22 @@
 - Run `pip install -e torchpack`
 - Run `pip install -e torchlight` 
 
+```
+pip uninstall setuptools
+
+pip install setuptools==60.2.0
+
+pip install packaging
+
+rm -R apex
+
+git clone https://github.com/NVIDIA/apex
+
+cd apex
+
+pip install -v --disable-pip-version-check --no-cache-dir --no-build-isolation --config-settings "--build-option=--cpp_ext" --config-settings "--build-option=--cuda_ext" ./
+```
+
 # Data Preparation
 
 ### Download datasets.
