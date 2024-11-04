@@ -55,12 +55,6 @@ python main.py --config config/degcn/train_j.yaml --device 0
 python main.py --config <work_dir>/config.yaml --work-dir <work_dir> --phase test --save-score True --weights <work_dir>/xxx.pt --device 0
 ```
 
-- To ensemble the results of different modalities, run 
-```
-# Example: ensemble four modalities of DeGCN on NTU RGB+D 120 cross subject
-python ensemble.py --datasets ntu120/xsub --joint-dir work_dir/ntu120/xsub/degcn --bone-dir work_dir/ntu120/xsub/degcn_bone --joint-motion-dir work_dir/ntu120/xsub/degcn_motion
-```
-
 ## Acknowledgements
 
 This repo is based on [DEGCN](https://github.com/WoominM/DeGCN_pytorch).
