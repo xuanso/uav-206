@@ -48,12 +48,13 @@ class Model(nn.Module):
 
         A = self.graph.A # 3,25,25
         
-        self.ntu_pairs = (
-            (1, 2), (2, 21), (3, 21), (4, 3), (5, 21), (6, 5),
-            (7, 6), (8, 7), (9, 21), (10, 9), (11, 10), (12, 11),
-            (13, 1), (14, 13), (15, 14), (16, 15), (17, 1), (18, 17),
-            (19, 18), (20, 19), (22, 23), (21, 21), (23, 8), (24, 25),(25, 12)
+        self.uav_pairs = (
+            (10, 8), (8, 6), (9, 7), (7, 5), # arms
+            (15, 13), (13, 11), (16, 14), (14, 12), # legs
+            (11, 5), (12, 6), (11, 12), (5, 6), # torso
+            (5, 0), (6, 0), (1, 0), (2, 0), (3, 1), (4, 2) # nose, eyes and ears
         )
+
         
         self.num_class = num_class
         self.num_point = num_point
@@ -106,8 +107,8 @@ class Model(nn.Module):
         
         # bone
         x2 = torch.zeros_like(x)
-        for v1, v2 in self.ntu_pairs:
-            x2[:, :, :, v1 - 1] = x[:, :, :, v1 - 1] - x[:, :, :, v2 - 1]  
+        for v1, v2 in self.uav_pairs:
+            x2[:, :, :, v1] = x[:, :, :, v1] - x[:, :, :, v2]
         
         x = torch.cat([x1, x2], 1)
         
