@@ -1,4 +1,4 @@
-work_dir: ./work_dir/degcn/train_m
+work_dir: ./work_dir/degcn/train_bm
 
 # feeder
 feeder: feeders.feeder.Feeder

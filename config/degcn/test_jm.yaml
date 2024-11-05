@@ -1,4 +1,4 @@
-work_dir: ./work_dir/degcn/test_m
+work_dir: ./work_dir/degcn/test_jm
 
 # feeder
 feeder: feeders.feeder.Feeder
