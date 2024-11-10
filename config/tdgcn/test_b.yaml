@@ -1,7 +1,7 @@
 work_dir: ./work_dir/test/tdgcn_b
 
 # feeder
-feeder: feeders.feeder_ntu.Feeder
+feeder: feeders.feeder.Feeder
 train_feeder_args:
   data_path: ./data/train_joint.npy
   label_path: ./data/train_label.npy
