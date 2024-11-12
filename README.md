@@ -12,6 +12,8 @@
 - Run `pip install -e torchlight` 
 
 ```
+#install apex
+
 pip uninstall setuptools
 
 pip install setuptools==60.2.0
@@ -61,7 +63,24 @@ Put downloaded data into the following directory structure:
 
 ```
 # Example: training DeGCN with joint modality
-python main.py --config config/degcn/train_j.yaml --device 0
+
+python main.py --config config/degcn/train_j.yaml
+python main.py --config config/degcn/train_b.yaml
+python main.py --config config/degcn/train_jbf.yaml
+
+python main_mixf.py --config config/skeleton-mixformer/train_j.yaml
+python main_mixf.py --config config/skeleton-mixformer/train_b.yaml
+
+python main_stt.py --config config/sttformer/train_j.yaml
+python main_stt.py --config config/sttformer/train_b.yaml
+python main_stt.py --config config/sttformer/train_jm.yaml
+
+python main_tdgcn.py --config config/tdgcn/train_j.yaml
+python main_tdgcn.py --config config/tdgcn/train_b.yaml
+
+cd infogcn
+python main.py --config config/train_j.yaml
+
 ```
 
 ### Testing
@@ -69,11 +88,17 @@ python main.py --config config/degcn/train_j.yaml --device 0
 - To test the trained models saved in <work_dir>, run the following command:
 
 ```
-python main.py --config <work_dir>/config.yaml --work-dir <work_dir> --phase test --save-score True --weights <work_dir>/xxx.pt --device 0
+
+python main.py --config config/degcn/test_*.yaml --phase test --save-score True --weights work_dir/degcn/xxx.pt
+
+python main_mixf.py --config config/skeleton-mixformer/test_*.yaml --phase test --save-score True --weights work_dir/skeleton-mixformer/xxx.pt
+
+python main_stt.py --config config/sttformer/test_*.yaml --phase test --save-score True --weights work_dir/sttformer/xxx.pt
+
+python main_tdgcn.py --config config/tdgcn/test_*.yaml --phase test --save-score True --weights work_dir/tdgcn/xxx.pt
+
+cd infogcn
+python main.py --config config/test_j.yaml --phase test --save-score True --weights ../work_dir/infogcn/xxx.pt
+
 ```
 
-## Acknowledgements
-
-This repo is based on [DEGCN](https://github.com/WoominM/DeGCN_pytorch).
-
-Thanks to the original authors for their work!
